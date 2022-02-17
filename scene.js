@@ -30,26 +30,6 @@ camera.position.x = 0; // move right from center of scene
 camera.position.y = 0; // move up from center of scene
 camera.position.z = 5; // move camera away from center of scene
 
-document.addEventListener('keydown', (event) => {
-    if (event.code == "ArrowLeft") {
-        camera.position.x--;
-        renderer.render(scene, camera);
-    } else if (event.code == "ArrowRight") {
-        camera.position.x++;
-        renderer.render(scene, camera);
-    } else if (event.code == "ArrowUp") {
-        console.log("i am uppie");
-        camera.position.y++;
-        renderer.render(scene, camera);
-    } else if (event.code == "ArrowDown"){
-        console.log("i am downie");
-        camera.position.y--;
-        renderer.render(scene, camera);
-
-    }
-  }, false);
-
-
 
 //boom
 // cylinder with a bol
