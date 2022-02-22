@@ -1,4 +1,4 @@
-orbitMovement()
+walkMovement()
 
 document.addEventListener("keydown", event => {
 

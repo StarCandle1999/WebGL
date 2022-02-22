@@ -17,7 +17,6 @@ document.body.appendChild(renderer.domElement);
 const textureLoader = new THREE.TextureLoader();
 
 
-
 earth = getEarth();
 scene.add(earth);
 
@@ -26,6 +25,9 @@ scene.add(skybox);
 
 light = getLight();
 scene.add(light);
+
+terrain = getTerrain();
+scene.add(terrain);
 
 // Move camera from center
 camera.position.x = 2;  // Move right from center of scene
