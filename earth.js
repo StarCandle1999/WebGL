@@ -10,6 +10,7 @@ function getEarth(){
 
 // Create mesh
     const earth = new THREE.Mesh(geometry, material);
+    earth.position.set(0,5,0);
 
     return earth;
 }

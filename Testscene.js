@@ -17,20 +17,25 @@ document.body.appendChild(renderer.domElement);
 const textureLoader = new THREE.TextureLoader();
 
 
-
 earth = getEarth();
 scene.add(earth);
 
 skybox = getSkybox();
 scene.add(skybox);
 
+ambientLight = getAmbientLight();
+scene.add(ambientLight);
+
 light = getLight();
 scene.add(light);
 
+terrain = getTerrain();
+scene.add(terrain);
+
 // Move camera from center
 camera.position.x = 2;  // Move right from center of scene
-camera.position.y = 1;  // Move up from center of scene
-camera.position.z = 5;  // Move camera away from center of scene
+camera.position.y = 3;  // Move up from center of scene
+camera.position.z = 10;  // Move camera away from center of scene
 
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
