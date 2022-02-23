@@ -11,7 +11,7 @@ function getSkybox(){
         );
     }
 
-    const skyGeometry = new THREE.BoxGeometry(2500, 2500, 2500);
+    const skyGeometry = new THREE.BoxGeometry(1000, 1000, 1000);
     const skyBox = new THREE.Mesh(skyGeometry, materialArray);
 
     return skyBox;
