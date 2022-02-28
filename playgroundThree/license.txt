@@ -1,0 +1,11 @@
+Model Information:
+* title:	Public Playground
+* source:	https://sketchfab.com/3d-models/public-playground-d62ca863ae3c4ef09787930ed574a56e
+* author:	VRVisuals.nl (https://sketchfab.com/VRVisuals_nl)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Public Playground" (https://sketchfab.com/3d-models/public-playground-d62ca863ae3c4ef09787930ed574a56e) by VRVisuals.nl (https://sketchfab.com/VRVisuals_nl) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,14 +1,24 @@
-function treeMesh(scene) {
+function Box(){
+    const width = 8;  // ui: width
+    const height = 8;  // ui: height
+    const depth = 8;  // ui: depth
+    const geometry = new THREE.BoxGeometry(width, height, depth);
+    const material = new THREE.MeshNormalMaterial();
+    
+    const box = new THREE.Mesh(geometry, material);
+    return box;
+}
+
+function treeMesh(scene, seeds) {
+    console.log(seeds);
     var loader = new THREE.TextureLoader();
-    const treeNumberArray = [-100, 100];
-    for(var i = 0; i < 1000; i++) {
-        var treeNumber = treeNumberArray[Math.floor(Math.random()*treeNumberArray.length)];
+    for(var i = 0; i < 100; i++) {
+        // randomizer positions
+        const randomPositionX = randomizePosition(seeds, "X");
+        const randomPositionZ = randomizePosition(seeds, "Z");
 
-        const randomPositionX = Math.floor(Math.random()*treeNumber);
-        const randomPositionZ = Math.floor(Math.random()*treeNumber);
+        // make log from tree
         let log = new THREE.BoxGeometry(0.1,1,0.1);
-
-        let logMat = new THREE.MeshBasicMaterial( {color: 'rgb(153, 102, 0)'})
         const bast = textureLoader.load("bast.jpg");
         const displacement = loader.load("displacement2.jpg")
 
@@ -22,22 +32,22 @@ function treeMesh(scene) {
 
         let logMesh = new THREE.Mesh(log, bastMaterial);
         logMesh.position.y = 0.5;
-        logMesh.position.x = randomPositionX;
+        if(seeds.Y.includes(logMesh.position.y)) {
+            logMesh.position.y = 0.5;
+        } else {
 
+        }
+        logMesh.position.x = randomPositionX;
         logMesh.position.z = randomPositionZ;
-        // logMesh.position
         logMesh.castShadow = true;
         logMesh.receiveShadow = true;
-        console.log("x=" , logMesh.position.x, "y position=", logMesh.position.y, logMesh.position.z);
-        
         scene.add(logMesh);
     
+        // make spheres for tree
         const radius = 0.3;  // ui: radius
         const widthSegments = 12;  // ui: widthSegments
         const heightSegments = 8;  // ui: heightSegments
         const sphere = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
-    
-        // let sphereMaterial = new THREE.MeshBasicMaterial({color: 'rgb(0, 179, 89)'});
 
         const leaf = textureLoader.load("leaf.jpg");
         const sphereMaterial = new THREE.MeshStandardMaterial( {
@@ -47,9 +57,6 @@ function treeMesh(scene) {
             displacementMap: displacement,
             displacementScale: 6
         } );
-
-        // const colorMap = textureLoader.load("earth.jpg");
-
 
         const sphereMeshOne = new THREE.Mesh(sphere, sphereMaterial);
         const sphereMeshTwo = new THREE.Mesh(sphere, sphereMaterial);
@@ -67,13 +74,22 @@ function treeMesh(scene) {
         sphereMeshFour.position.z = randomPositionZ;
 
         sphereMeshOne.position.x = randomPositionX - 0.2;
-        // sphereMeshTwo.position.x = -0.15;
         sphereMeshTwo.position.x = randomPositionX - (-0.15);
         sphereMeshTree.position.x = randomPositionX;
-        sphereMeshFour.position.x = randomPositionX; 
-    
-    
+        sphereMeshFour.position.x = randomPositionX;     
     
         scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree,sphereMeshFour);
+    }
+}
+
+function randomizePosition(seeds, target) {
+    const treeNumberArray = [-20, 20];
+    const position = Math.floor(Math.random()*treeNumberArray[Math.floor(Math.random()*treeNumberArray.length)]);
+    console.log(seeds[target]);
+    if (seeds[target].includes(position)) {
+        console.log(position);
+        randomizePosition(seeds, target);
+    } else {
+        return position;
     }
 }
