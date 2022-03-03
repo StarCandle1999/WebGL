@@ -67,21 +67,8 @@ function treeMesh(scene, x, z) {
     //top sphere
     const sphereMeshFour = new THREE.Mesh(sphere, sphereMaterial);
     sphereMeshFour.position.y = 8;
-<<<<<<< Updated upstream:Scripts/RandomTree.js
-
-    sphereMeshOne.position.z = randomPositionZ;
-    sphereMeshTwo.position.z = randomPositionZ;
-    sphereMeshTree.position.z = randomPositionZ;
-    sphereMeshFour.position.z = randomPositionZ;
-
-    sphereMeshOne.position.x = randomPositionX - 1.2;
-    sphereMeshTwo.position.x = randomPositionX - (-1.2);
-    sphereMeshTree.position.x = randomPositionX;
-    sphereMeshFour.position.x = randomPositionX;
-=======
     sphereMeshFour.position.z = positionZ;
     sphereMeshFour.position.x = positionX;     
->>>>>>> Stashed changes:RandomTree.js
 
     scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree, sphereMeshFour);
 }
