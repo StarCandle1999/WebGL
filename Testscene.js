@@ -1,3 +1,4 @@
+
 // Create scene
 const scene = new THREE.Scene();
 
@@ -16,9 +17,10 @@ document.body.appendChild(renderer.domElement);
 
 const textureLoader = new THREE.TextureLoader();
 
-
 earth = getEarth();
 scene.add(earth);
+
+getCabin();
 
 skybox = getSkybox();
 scene.add(skybox);
@@ -39,7 +41,6 @@ camera.position.z = 10;  // Move camera away from center of scene
 
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
-
 
 // const controls = new THREE.FirstPersonControls(camera);
 
