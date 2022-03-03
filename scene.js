@@ -40,45 +40,22 @@ camera.position.x = 2;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
 camera.position.z = 20;  // Move camera away from center of scene
 // Import camera control and rotation library
-const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
-const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
-fpsControls.movementSpeed = 0.5;
-fpsControls.lookSpeed = 0.0025
-fpsControls.enabled = false;
 
-var sportCarPosition10 = false;
+
+
 const render = function() {
     requestAnimationFrame(render);
 
-    var sportcar = scene.getObjectByName("sportcar");
-    if (!sportCarPosition10) {
-        if (sportcar.position.z <= 20 ) {
-            sportcar.position.z += 0.1;
-        } else {
-            sportCarPosition10 = true;
-        }
-    } else {
-        if (sportcar.position.z >= 5) {
-            sportcar.position.z -= 0.1;
-        } else {
-            sportCarPosition10 = false;
-        }
-    }
+    animateCar(sportCarPosition10);
 
     if (camera.position.y <= cameraLock[0]){
         camera.position.y = cameraLock[0];
-    }
-
-    if (camera.position.y >= cameraLock[1]){
+    }else if (camera.position.y >= cameraLock[1]){
         camera.position.y = cameraLock[1];
     }
 
-    if (orbitControls.enabled){
-        orbitControls.update();
-    }
-    if (fpsControls.enabled){
-        fpsControls.update(1);
-    }
+    updateMovement();
+
     renderer.render(scene, camera);
 }
 

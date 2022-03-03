@@ -1,28 +1,38 @@
+const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+orbitControls.autoRotate = true;
+orbitControls.autoRotateSpeed = 2;
+orbitControls.noKeys = true;
+
+const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
+fpsControls.movementSpeed = 0.5;
+fpsControls.lookSpeed = 0.0025
+fpsControls.enabled = false;
+
 walkMovement()
 
 document.addEventListener("keydown", event => {
 
     if(event.code === "KeyI"){
-        resetMovement();
         orbitMovement();
     }
     if(event.code === "KeyO"){
-        resetMovement();
         flyMovement();
     }
     if(event.code === "KeyP"){
-        resetMovement();
         walkMovement();
     }
 });
 
+function updateMovement(){
+    if (orbitControls.enabled){
+        orbitControls.update();
+    } else if (fpsControls.enabled){
+        fpsControls.update(1);
+    }
+}
+
 function orbitMovement(){
     console.log("orbit")
-// Import camera control and rotation library
-
-    orbitControls.autoRotate = true;
-    orbitControls.autoRotateSpeed = 2;
-    orbitControls.noKeys = true;
 
     fpsControls.enabled = false
     orbitControls.enabled = true
@@ -45,12 +55,4 @@ function flyMovement(){
     orbitControls.enabled = false
     cameraLock[0] = 1;
     cameraLock[1] = 500;
-}
-
-
-function resetMovement(){
-    console.log("Movement reset")
-    // controls.autoRotate = false;
-    // controls.noKeys = false;
-    // controls.enableDamping = false;
 }

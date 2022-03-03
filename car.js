@@ -1,3 +1,5 @@
+var sportCarPosition10 = false;
+
 function getCar(){
     // instantiate a loader
 
@@ -40,7 +42,21 @@ function getCar(){
         
     );
 
+}
 
-// load a resource
-
+function animateCar(){
+    var sportcar = scene.getObjectByName("sportcar");
+    if (!sportCarPosition10) {
+        if (sportcar.position.z <= 20 ) {
+            sportcar.position.z += 0.1;
+        } else {
+            sportCarPosition10 = true;
+        }
+    } else {
+        if (sportcar.position.z >= 5) {
+            sportcar.position.z -= 0.1;
+        } else {
+            sportCarPosition10 = false;
+        }
+    }
 }
