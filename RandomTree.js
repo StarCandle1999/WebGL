@@ -10,7 +10,7 @@ function Box(){
 }
 
 function treeMesh(scene, x, z) {
-    var loader = new THREE.TextureLoader();
+    let loader = new THREE.TextureLoader();
     const randomPositionX = x;
     const randomPositionZ = z;
     // make log from tree

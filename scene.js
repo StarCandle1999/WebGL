@@ -1,6 +1,8 @@
 // Create scene
 const scene = new THREE.Scene();
 
+cameraLock = [2,2]
+
 // Create camera
 const camera = new THREE.PerspectiveCamera(
     75,     // fov - Camera frustum vertical field of view
@@ -43,8 +45,10 @@ camera.position.z = 20;  // Move camera away from center of scene
 
 
 // Import camera control and rotation library
-const controls = new THREE.OrbitControls(camera, renderer.domElement);
-// const controls = new THREE.FirstPersonControls(camera);
+const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
+fpsControls.enabled = false;
+
 var sportCarPosition10 = false;
 const render = function() {
     requestAnimationFrame(render);
@@ -63,7 +67,21 @@ const render = function() {
             sportCarPosition10 = false;
         }
     }
-    controls.update();
+
+    if (camera.position.y <= cameraLock[0]){
+        camera.position.y = cameraLock[0];
+    }
+
+    if (camera.position.y >= cameraLock[1]){
+        camera.position.y = cameraLock[1];
+    }
+
+    if (orbitControls.enabled){
+        orbitControls.update();
+    }
+    if (fpsControls.enabled){
+        fpsControls.update();
+    }
     renderer.render(scene, camera);
 }
 
