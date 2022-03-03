@@ -37,11 +37,6 @@ createTrees(scene);
 camera.position.x = 2;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
 camera.position.z = 20;  // Move camera away from center of scene
-// for(var i = 2; i < 100; i++)  {
-//     camera.position.x = 2;  // Move right from center of scene
-// }
-
-
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 // const controls = new THREE.FirstPersonControls(camera);
