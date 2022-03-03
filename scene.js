@@ -42,6 +42,7 @@ camera.position.z = 20;  // Move camera away from center of scene
 // Import camera control and rotation library
 const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
 const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
+fpsControls.movementSpeed = 0.5;
 fpsControls.enabled = false;
 
 var sportCarPosition10 = false;
@@ -75,7 +76,7 @@ const render = function() {
         orbitControls.update();
     }
     if (fpsControls.enabled){
-        fpsControls.update();
+        fpsControls.update(1);
     }
     renderer.render(scene, camera);
 }
