@@ -18,6 +18,9 @@ function getCar(){
                 'Car/SportsCar.obj',
                 // called when resource is loaded
                 function ( object ) {
+                    object.position.z = 5;
+                    object.name = "sportcar";
+                    console.log(object);
                     scene.add( object );
 
                 },
