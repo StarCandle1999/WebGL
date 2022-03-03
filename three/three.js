@@ -32287,7 +32287,7 @@
 	 *
 	 * Note:
 	 *
-	 *		Objects of this class appear as one object to the mixer,
+	 *		Scripts of this class appear as one object to the mixer,
 	 *		so cache control of the individual objects must be done
 	 *		on the group.
 	 *
