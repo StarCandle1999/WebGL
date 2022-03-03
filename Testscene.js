@@ -1,4 +1,3 @@
-
 // Create scene
 const scene = new THREE.Scene();
 
@@ -11,7 +10,7 @@ const camera = new THREE.PerspectiveCamera(
 // Far clipping plane above will not work, because skybox is 5000x5000x5000. Try 2500
 
 // Create renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -41,7 +40,7 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // const controls = new THREE.FirstPersonControls(camera);
 
-const render = function() {
+const render = function () {
     requestAnimationFrame(render);
 
     controls.update();

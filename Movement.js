@@ -16,26 +16,26 @@ walkMovement()
 //listen if the user requests other movement
 document.addEventListener("keydown", event => {
 
-    if(event.code === "KeyI"){
+    if (event.code === "KeyI") {
         orbitMovement();
     }
-    if(event.code === "KeyO"){
+    if (event.code === "KeyO") {
         flyMovement();
     }
-    if(event.code === "KeyP"){
+    if (event.code === "KeyP") {
         walkMovement();
     }
 });
 
-function updateMovement(){
-    if (orbitControls.enabled){
+function updateMovement() {
+    if (orbitControls.enabled) {
         orbitControls.update();
-    } else if (fpsControls.enabled){
+    } else if (fpsControls.enabled) {
         fpsControls.update(1);
     }
 }
 
-function orbitMovement(){
+function orbitMovement() {
     console.log("orbit")
 
     fpsControls.enabled = false
@@ -44,7 +44,7 @@ function orbitMovement(){
     cameraLock[1] = 500;
 }
 
-function walkMovement(){
+function walkMovement() {
     console.log("Walk")
     fpsControls.enabled = true
     orbitControls.enabled = false
@@ -53,7 +53,7 @@ function walkMovement(){
     cameraLock[1] = 2;
 }
 
-function flyMovement(){
+function flyMovement() {
     console.log("Fly")
     fpsControls.enabled = true
     orbitControls.enabled = false

@@ -1,7 +1,7 @@
 // Create scene
 const scene = new THREE.Scene();
 
-cameraLock = [2,2]
+cameraLock = [2, 2]
 
 // Create camera
 const camera = new THREE.PerspectiveCamera(
@@ -12,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(
 // Far clipping plane above will not work, because skybox is 5000x5000x5000. Try 2500
 
 // Create renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -42,15 +42,14 @@ camera.position.z = 20;  // Move camera away from center of scene
 // Import camera control and rotation library
 
 
-
-const render = function() {
+const render = function () {
     requestAnimationFrame(render);
 
     animateCar();
 
-    if (camera.position.y <= cameraLock[0]){
+    if (camera.position.y <= cameraLock[0]) {
         camera.position.y = cameraLock[0];
-    }else if (camera.position.y >= cameraLock[1]){
+    } else if (camera.position.y >= cameraLock[1]) {
         camera.position.y = cameraLock[1];
     }
 

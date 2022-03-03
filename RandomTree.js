@@ -1,10 +1,10 @@
-function Box(){
+function Box() {
     const width = 8;  // ui: width
     const height = 8;  // ui: height
     const depth = 8;  // ui: depth
     const geometry = new THREE.BoxGeometry(width, height, depth);
     const material = new THREE.MeshNormalMaterial();
-    
+
     const box = new THREE.Mesh(geometry, material);
     return box;
 }
@@ -17,14 +17,14 @@ function treeMesh(scene, x, z) {
     const bast = textureLoader.load("images/bast.jpg");
     const displacement = loader.load("displacement2.jpg")
 
-    const log = new THREE.CylinderGeometry( 0.5, 0.5, 10, 32 );
-    const bastMaterial = new THREE.MeshStandardMaterial( {
+    const log = new THREE.CylinderGeometry(0.5, 0.5, 10, 32);
+    const bastMaterial = new THREE.MeshStandardMaterial({
         color: 'rgb(155,154,134))',
         side: THREE.DoubleSide,
         map: bast,
         displacementMap: displacement,
         displacementScale: 6
-    } );
+    });
 
     let logMesh = new THREE.Mesh(log, bastMaterial);
     logMesh.position.y = 2;
@@ -41,13 +41,13 @@ function treeMesh(scene, x, z) {
     const sphere = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
 
     const leaf = textureLoader.load("images/leaf.jpg");
-    const sphereMaterial = new THREE.MeshStandardMaterial( {
+    const sphereMaterial = new THREE.MeshStandardMaterial({
         color: 'rgb(95, 184, 18)',
         side: THREE.DoubleSide,
         map: leaf,
         displacementMap: displacement,
         displacementScale: 6
-    } );
+    });
 
     const sphereMeshOne = new THREE.Mesh(sphere, sphereMaterial);
     const sphereMeshTwo = new THREE.Mesh(sphere, sphereMaterial);
@@ -67,9 +67,9 @@ function treeMesh(scene, x, z) {
     sphereMeshOne.position.x = randomPositionX - 1.2;
     sphereMeshTwo.position.x = randomPositionX - (-1.2);
     sphereMeshTree.position.x = randomPositionX;
-    sphereMeshFour.position.x = randomPositionX;     
+    sphereMeshFour.position.x = randomPositionX;
 
-    scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree,sphereMeshFour);
+    scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree, sphereMeshFour);
 }
 
 function createTrees(scene) {
@@ -88,7 +88,7 @@ function createTrees(scene) {
     treeMesh(scene, -30, -15);
     treeMesh(scene, -25, -15);
     treeMesh(scene, -28, -10);
-    
+
     // right of the house
     treeMesh(scene, 20, -10);
     treeMesh(scene, 15, -12);
