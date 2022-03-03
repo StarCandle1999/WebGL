@@ -32,42 +32,23 @@ scene.add(light);
 terrain = getTerrain();
 scene.add(terrain);
 
-boxie = Box();
-// scene.add(boxie);
-var box = new THREE.Box3().setFromObject(boxie );
-console.log(boxie.matrix)
-// var position = new THREE.Vector3();
-// position.setFromMatrixPosition(position );
-//x,y,z
-const seeds = [[boxie.position.x, boxie.position.y, boxie.position.z, box.getSize()]];
-const seeds2 = {"X" : [], "Y" : [0.5], "Z" : []};
-//treeMesh(scene, seeds2);
+createTrees(scene);
+// treeMesh(scene, seeds2);
 
 // Move camera from center
-camera.position.x = 2;  // Move right from center of scene
-camera.position.y = 3;  // Move up from center of scene
-camera.position.z = 10;  // Move camera away from center of scene
+camera.position.x = -20;  // Move right from center of scene
+camera.position.y = 13;  // Move up from center of scene
+camera.position.z = 100;  // Move camera away from center of scene
 
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-
-
-// test glbt files
-var loader = new THREE.GLTFLoader();
-loader.load("mcdonalds/scene.gltf", function(gltf) {
-	gltf.scene.scale.set( 0.1, 0.1, 0.1);			   
-	gltf.scene.position.x = 0;				    //Position (x = right+ left-) 
-    gltf.scene.position.y = 0;				    //Position (y = up+, down-)
-	gltf.scene.position.z = 0;				    //Position (z = front +, back-)
-	scene.add( gltf.scene );
-	console.log(gltf);
-});
-
 // const controls = new THREE.FirstPersonControls(camera);
 
 const render = function() {
     requestAnimationFrame(render);
+    if (camera.position.y <= 2) {
+        camera.position.y = 2;
+    } 
     controls.update();
     renderer.render(scene, camera);
 }

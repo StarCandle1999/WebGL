@@ -9,16 +9,17 @@ function Box(){
     return box;
 }
 
-function treeMesh(scene, seeds) {
-    console.log(seeds);
+function treeMesh(scene, x, z) {
     var loader = new THREE.TextureLoader();
-    for(var i = 0; i < 100; i++) {
+    // for(var i = 0; i < 100; i++) {
         // randomizer positions
-        const randomPositionX = randomizePosition(seeds, "X");
-        const randomPositionZ = randomizePosition(seeds, "Z");
-
+        // const randomPositionX = randomizePosition(seeds, "X");
+        const randomPositionX = x;
+        // const randomPositionZ = randomizePosition(seeds, "Z");
+        const randomPositionZ = z;
+        // console.log("x: ", randomPositionX, " y: ", randomPositionZ )
         // make log from tree
-        let log = new THREE.BoxGeometry(0.1,1,0.1);
+        let log = new THREE.BoxGeometry(3,30,3);
         const bast = textureLoader.load("bast.jpg");
         const displacement = loader.load("displacement2.jpg")
 
@@ -31,12 +32,12 @@ function treeMesh(scene, seeds) {
         } );
 
         let logMesh = new THREE.Mesh(log, bastMaterial);
-        logMesh.position.y = 0.5;
-        if(seeds.Y.includes(logMesh.position.y)) {
-            logMesh.position.y = 0.5;
-        } else {
+        logMesh.position.y = 13;
+        // if(seeds.Y.includes(logMesh.position.y)) {
+        //     logMesh.position.y = 2;
+        // } else {
 
-        }
+        // }
         logMesh.position.x = randomPositionX;
         logMesh.position.z = randomPositionZ;
         logMesh.castShadow = true;
@@ -44,9 +45,9 @@ function treeMesh(scene, seeds) {
         scene.add(logMesh);
     
         // make spheres for tree
-        const radius = 0.3;  // ui: radius
-        const widthSegments = 12;  // ui: widthSegments
-        const heightSegments = 8;  // ui: heightSegments
+        const radius = 8;  // ui: radius
+        const widthSegments = 40;  // ui: widthSegments
+        const heightSegments = 34;  // ui: heightSegments
         const sphere = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
 
         const leaf = textureLoader.load("leaf.jpg");
@@ -63,33 +64,37 @@ function treeMesh(scene, seeds) {
         const sphereMeshTree = new THREE.Mesh(sphere, sphereMaterial);
         const sphereMeshFour = new THREE.Mesh(sphere, sphereMaterial);
     
-        sphereMeshOne.position.y = 1.5;
-        sphereMeshTwo.position.y = 1.5;
-        sphereMeshTree.position.y = 1.8;
-        sphereMeshFour.position.y = 1.2;
+        sphereMeshOne.position.y = 35.5;
+        sphereMeshTwo.position.y = 40.5;
+        sphereMeshTree.position.y = 45;
+        sphereMeshFour.position.y = 32;
 
         sphereMeshOne.position.z = randomPositionZ;
         sphereMeshTwo.position.z = randomPositionZ;
         sphereMeshTree.position.z = randomPositionZ;
         sphereMeshFour.position.z = randomPositionZ;
 
-        sphereMeshOne.position.x = randomPositionX - 0.2;
-        sphereMeshTwo.position.x = randomPositionX - (-0.15);
+        sphereMeshOne.position.x = randomPositionX - 6;
+        sphereMeshTwo.position.x = randomPositionX - (-6.5);
         sphereMeshTree.position.x = randomPositionX;
         sphereMeshFour.position.x = randomPositionX;     
     
         scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree,sphereMeshFour);
-    }
+    // }
 }
 
-function randomizePosition(seeds, target) {
-    const treeNumberArray = [-20, 20];
-    const position = Math.floor(Math.random()*treeNumberArray[Math.floor(Math.random()*treeNumberArray.length)]);
-    console.log(seeds[target]);
-    if (seeds[target].includes(position)) {
-        console.log(position);
-        randomizePosition(seeds, target);
-    } else {
-        return position;
-    }
+function createTrees(scene) {
+    treeMesh(scene, 10, 10);
+    treeMesh(scene, 40, 40);
 }
+
+// function randomizePosition(seeds, target) {
+//     const treeNumberArray = [-200, 200];
+//     const position = Math.floor(Math.random()*treeNumberArray[Math.floor(Math.random()*treeNumberArray.length)]);
+//     if (seeds[target].includes(position)) {
+//         console.log(position);
+//         randomizePosition(seeds, target);
+//     } else {
+//         return position;
+//     }
+// }
