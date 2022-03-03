@@ -48,7 +48,6 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 var sportCarPosition10 = false;
 const render = function() {
     requestAnimationFrame(render);
-    console.log(scene.getObjectByName("sportcar"))
 
     var sportcar = scene.getObjectByName("sportcar");
     if (!sportCarPosition10) {
