@@ -43,6 +43,7 @@ camera.position.z = 20;  // Move camera away from center of scene
 const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
 const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
 fpsControls.movementSpeed = 0.5;
+fpsControls.lookSpeed = 0.0025
 fpsControls.enabled = false;
 
 var sportCarPosition10 = false;
