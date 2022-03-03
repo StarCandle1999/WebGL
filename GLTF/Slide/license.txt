@@ -1,0 +1,11 @@
+Model Information:
+* title:	Slide PlayGround
+* source:	https://sketchfab.com/3d-models/slide-playground-e59c8559ba42463881732790dcbfbb3c
+* author:	vaedskalw (https://sketchfab.com/vaedskalw)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Slide PlayGround" (https://sketchfab.com/3d-models/slide-playground-e59c8559ba42463881732790dcbfbb3c) by vaedskalw (https://sketchfab.com/vaedskalw) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
