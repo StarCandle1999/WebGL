@@ -1,15 +1,19 @@
+//create orbitcontrols
 const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
 orbitControls.autoRotate = true;
 orbitControls.autoRotateSpeed = 2;
 orbitControls.noKeys = true;
 
+//create fps controls
 const fpsControls = new THREE.FirstPersonControls(camera, renderer.domElement);
 fpsControls.movementSpeed = 0.5;
 fpsControls.lookSpeed = 0.0025
 fpsControls.enabled = false;
 
+//we start in the walk movement
 walkMovement()
 
+//listen if the user requests other movement
 document.addEventListener("keydown", event => {
 
     if(event.code === "KeyI"){

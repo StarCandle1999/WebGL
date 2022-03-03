@@ -46,7 +46,7 @@ camera.position.z = 20;  // Move camera away from center of scene
 const render = function() {
     requestAnimationFrame(render);
 
-    animateCar(sportCarPosition10);
+    animateCar();
 
     if (camera.position.y <= cameraLock[0]){
         camera.position.y = cameraLock[0];
