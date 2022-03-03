@@ -73,6 +73,31 @@ function treeMesh(scene, x, z) {
 }
 
 function createTrees(scene) {
+    // back of te house
+    treeMesh(scene, 20, -25);
+    treeMesh(scene, 15, -20);
+    treeMesh(scene, 10, -18);
+    treeMesh(scene, 5, -22);
+    treeMesh(scene, -5, -25);
+    treeMesh(scene, -0, -20);
+    treeMesh(scene, -8, -20);
+    treeMesh(scene, -13, -20);
+
+    //back of the playground and left of it
+    treeMesh(scene, -20, -25);
+    treeMesh(scene, -30, -15);
+    treeMesh(scene, -25, -15);
+    treeMesh(scene, -28, -10);
+    
+    // right of the house
+    treeMesh(scene, 20, -10);
+    treeMesh(scene, 15, -12);
+    treeMesh(scene, 14, -6);
+    treeMesh(scene, 15, 0);
+    treeMesh(scene, 12, 5);
+    treeMesh(scene, 10, 2);
+
+    //around the house
     treeMesh(scene, 6, -2);
     treeMesh(scene, 8, -4);
     treeMesh(scene, 8, -6);
@@ -82,4 +107,25 @@ function createTrees(scene) {
     treeMesh(scene, 5, -14);
     treeMesh(scene, 2, -14);
     treeMesh(scene, 0, -15);
+    treeMesh(scene, -5, -15);
+    treeMesh(scene, -4, -12);
+    treeMesh(scene, -8, -9);
+    treeMesh(scene, -6, -6);
+    treeMesh(scene, -10, -8);
+
+    //left of the house
+    treeMesh(scene, -10, -15);
+    treeMesh(scene, -15, -15);
+    treeMesh(scene, -18, -10);
+    treeMesh(scene, -18, -5);
+    treeMesh(scene, -20, 5);
+    treeMesh(scene, -17, 8);
+    treeMesh(scene, -10, 5);
+    treeMesh(scene, -20, -5);
+    treeMesh(scene, -18, -2);
+    treeMesh(scene, -25, 0);
+    treeMesh(scene, -23, 5);
+    treeMesh(scene, -14, -6);
+
+    // treeMesh(scene, -7, -4);
 }

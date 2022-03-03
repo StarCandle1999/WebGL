@@ -34,7 +34,7 @@ scene.add(terrain);
 createTrees(scene);
 
 // Move camera from center
-camera.position.x = 2;  // Move right from center of scene
+camera.position.x = 200;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
 camera.position.z = 10;  // Move camera away from center of scene
 // for(var i = 2; i < 100; i++)  {
@@ -48,13 +48,18 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 const render = function() {
     requestAnimationFrame(render);
-    if (camera.position.y <= 2) {
-        camera.position.y = 2;
-    }
-
-  
+    // console.log(scene.playground);
+    
+    // while (camera.position.x != -100) {
+        // camera.position.x -= 1;
+    // }
     controls.update();
     renderer.render(scene, camera);
+}
+
+function init() {
+    // Translate
+    playground.scene.position.x += 1;
 }
 
 render();
