@@ -34,9 +34,9 @@ scene.add(terrain);
 createTrees(scene);
 
 // Move camera from center
-camera.position.x = 200;  // Move right from center of scene
+camera.position.x = 2;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
-camera.position.z = 10;  // Move camera away from center of scene
+camera.position.z = 20;  // Move camera away from center of scene
 // for(var i = 2; i < 100; i++)  {
 //     camera.position.x = 2;  // Move right from center of scene
 // }
@@ -45,21 +45,27 @@ camera.position.z = 10;  // Move camera away from center of scene
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 // const controls = new THREE.FirstPersonControls(camera);
-
+var sportCarPosition10 = false;
 const render = function() {
     requestAnimationFrame(render);
-    // console.log(scene.playground);
-    
-    // while (camera.position.x != -100) {
-        // camera.position.x -= 1;
-    // }
+    console.log(scene.getObjectByName("sportcar"))
+
+    var sportcar = scene.getObjectByName("sportcar");
+    if (!sportCarPosition10) {
+        if (sportcar.position.z <= 20 ) {
+            sportcar.position.z += 0.1;
+        } else {
+            sportCarPosition10 = true;
+        }
+    } else {
+        if (sportcar.position.z >= 5) {
+            sportcar.position.z -= 0.1;
+        } else {
+            sportCarPosition10 = false;
+        }
+    }
     controls.update();
     renderer.render(scene, camera);
-}
-
-function init() {
-    // Translate
-    playground.scene.position.x += 1;
 }
 
 render();
