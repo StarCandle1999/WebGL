@@ -57,6 +57,7 @@ const render = function() {
     updateMovement();
 
     renderer.render(scene, camera);
+
 }
 
 render();

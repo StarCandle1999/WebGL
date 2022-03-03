@@ -3,7 +3,8 @@ function getBush(){
     const leafMaterial = new THREE.MeshStandardMaterial( {
         color: 'rgb(95, 184, 18)',
         map: leaf,
-        opacity: 0.5
+        transparent: true,
+        opacity: 0.8
     } );
 
     const geometry = new THREE.ConeGeometry( 1, 3, 10 );
