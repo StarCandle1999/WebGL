@@ -16,6 +16,8 @@ document.body.appendChild(renderer.domElement);
 
 const textureLoader = new THREE.TextureLoader();
 
+getCabin();
+
 skybox = getSkybox();
 scene.add(skybox);
 
@@ -29,12 +31,15 @@ terrain = getTerrain();
 scene.add(terrain);
 
 createTrees(scene);
-// treeMesh(scene, seeds2);
 
 // Move camera from center
-camera.position.x = -20;  // Move right from center of scene
-camera.position.y = 13;  // Move up from center of scene
-camera.position.z = 100;  // Move camera away from center of scene
+camera.position.x = 2;  // Move right from center of scene
+camera.position.y = 3;  // Move up from center of scene
+camera.position.z = 10;  // Move camera away from center of scene
+// for(var i = 2; i < 100; i++)  {
+//     camera.position.x = 2;  // Move right from center of scene
+// }
+
 
 // Import camera control and rotation library
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -44,7 +49,9 @@ const render = function() {
     requestAnimationFrame(render);
     if (camera.position.y <= 2) {
         camera.position.y = 2;
-    } 
+    }
+
+  
     controls.update();
     renderer.render(scene, camera);
 }
