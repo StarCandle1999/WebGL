@@ -15,15 +15,12 @@ function treeMesh(scene, x, z) {
     const positionZ = z;
     // make log from tree
     const bast = textureLoader.load("images/bast.jpg");
-    const displacement = loader.load("displacement2.jpg")
 
     const log = new THREE.CylinderGeometry(0.5, 0.5, 10, 32);
     const bastMaterial = new THREE.MeshStandardMaterial({
         color: 'rgb(155,154,134))',
         side: THREE.DoubleSide,
-        map: bast,
-        displacementMap: displacement,
-        displacementScale: 6
+        map: bast
     });
 
     let logMesh = new THREE.Mesh(log, bastMaterial);
@@ -44,9 +41,7 @@ function treeMesh(scene, x, z) {
     const sphereMaterial = new THREE.MeshStandardMaterial({
         color: 'rgb(95, 184, 18)',
         side: THREE.DoubleSide,
-        map: leaf,
-        displacementMap: displacement,
-        displacementScale: 6
+        map: leaf
     });
 
     //right sphere

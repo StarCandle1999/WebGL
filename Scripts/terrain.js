@@ -5,19 +5,6 @@ function getTerrain() {
         grass.offset.set(0, 0);
         grass.repeat.set(250, 250);
     });
-<<<<<<< Updated upstream:Scripts/terrain.js
-    // const displacement = loader.load("displacement2.jpg")
-
-    const geometry = new THREE.PlaneGeometry(2500, 2500);
-    const material = new THREE.MeshStandardMaterial({
-        color: 'rgb(95, 184, 18)',
-        side: THREE.DoubleSide,
-        map: grass,
-        // displacementMap: displacement,
-        // displacementScale: 6
-    });
-    const plane = new THREE.Mesh(geometry, material);
-=======
     
     const geometry = new THREE.PlaneGeometry( 2500, 2500 );
     const material = new THREE.MeshStandardMaterial( {
@@ -26,7 +13,6 @@ function getTerrain() {
         map: grass,
     } );
     const plane = new THREE.Mesh( geometry, material );
->>>>>>> Stashed changes:terrain.js
     //rotation is done in radians so used conversion from degrees to radian for ease of use
     plane.rotateX(Math.PI / 180 * 90);
 
