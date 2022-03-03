@@ -49,6 +49,7 @@ var sportCarPosition10 = false;
 const render = function() {
     requestAnimationFrame(render);
 
+    renderer.render(scene, camera);
     var sportcar = scene.getObjectByName("sportcar");
     if (!sportCarPosition10) {
         if (sportcar.position.z <= 20 ) {
@@ -79,6 +80,7 @@ const render = function() {
         fpsControls.update(1);
     }
     renderer.render(scene, camera);
+
 }
 
 render();
