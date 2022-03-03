@@ -17,6 +17,7 @@ document.body.appendChild(renderer.domElement);
 const textureLoader = new THREE.TextureLoader();
 
 getCabin();
+getCar();
 
 skybox = getSkybox();
 scene.add(skybox);
