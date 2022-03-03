@@ -15,12 +15,7 @@ walkMovement()
 
 //listen if the user requests other movement
 document.addEventListener("keydown", event => {
-<<<<<<< Updated upstream:Scripts/Movement.js
-
-    if (event.code === "KeyI") {
-=======
     if(event.code === "KeyI"){
->>>>>>> Stashed changes:Movement.js
         orbitMovement();
     }
     if (event.code === "KeyO") {
