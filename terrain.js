@@ -1,6 +1,6 @@
 function getTerrain(){
     const loader = new THREE.TextureLoader();
-    const grass = loader.load("grass.jpg", function (grass){
+    const grass = loader.load("images/grass.jpg", function (grass){
         grass.wrapS = grass.wrapT = THREE.RepeatWrapping;
         grass.offset.set( 0, 0 );
         grass.repeat.set( 250, 250 );

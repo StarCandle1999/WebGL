@@ -1,6 +1,6 @@
 function getSkybox(){
 
-    const directions  = ["clouds/pos-x.bmp", "clouds/neg-x.bmp", "clouds/pos-y.bmp", "clouds/neg-y.bmp", "clouds/pos-z.bmp", "clouds/neg-z.bmp"];
+    const directions  = ["Assets/clouds/pos-x.bmp", "Assets/clouds/neg-x.bmp", "Assets/clouds/pos-y.bmp", "Assets/clouds/neg-y.bmp", "Assets/clouds/pos-z.bmp", "Assets/clouds/neg-z.bmp"];
     const materialArray = [];
     for (let i = 0; i < 6; i++)
     {

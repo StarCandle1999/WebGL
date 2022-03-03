@@ -14,7 +14,7 @@ function treeMesh(scene, x, z) {
     const randomPositionX = x;
     const randomPositionZ = z;
     // make log from tree
-    const bast = textureLoader.load("bast.jpg");
+    const bast = textureLoader.load("images/bast.jpg");
     const displacement = loader.load("displacement2.jpg")
 
     const log = new THREE.CylinderGeometry( 0.5, 0.5, 10, 32 );
@@ -40,7 +40,7 @@ function treeMesh(scene, x, z) {
     const heightSegments = 5;  // ui: heightSegments
     const sphere = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
 
-    const leaf = textureLoader.load("leaf.jpg");
+    const leaf = textureLoader.load("images/leaf.jpg");
     const sphereMaterial = new THREE.MeshStandardMaterial( {
         color: 'rgb(95, 184, 18)',
         side: THREE.DoubleSide,
