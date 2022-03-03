@@ -18,7 +18,7 @@ const textureLoader = new THREE.TextureLoader();
 
 getCabin();
 getCar();
-
+getBush();
 skybox = getSkybox();
 scene.add(skybox);
 
@@ -34,7 +34,7 @@ scene.add(terrain);
 createTrees(scene);
 
 // Move camera from center
-camera.position.x = 200;  // Move right from center of scene
+camera.position.x = 2;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
 camera.position.z = 10;  // Move camera away from center of scene
 // for(var i = 2; i < 100; i++)  {
