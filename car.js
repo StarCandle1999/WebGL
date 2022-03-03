@@ -45,18 +45,20 @@ function getCar(){
 }
 
 function animateCar(){
-    var sportcar = scene.getObjectByName("sportcar");
-    if (!sportCarPosition10) {
-        if (sportcar.position.z <= 20 ) {
-            sportcar.position.z += 0.1;
+    if (scene.getObjectByName("sportcar")){
+        var sportcar = scene.getObjectByName("sportcar");
+        if (!sportCarPosition10) {
+            if (sportcar.position.z <= 20 ) {
+                sportcar.position.z += 0.1;
+            } else {
+                sportCarPosition10 = true;
+            }
         } else {
-            sportCarPosition10 = true;
-        }
-    } else {
-        if (sportcar.position.z >= 5) {
-            sportcar.position.z -= 0.1;
-        } else {
-            sportCarPosition10 = false;
+            if (sportcar.position.z >= 5) {
+                sportcar.position.z -= 0.1;
+            } else {
+                sportCarPosition10 = false;
+            }
         }
     }
 }
