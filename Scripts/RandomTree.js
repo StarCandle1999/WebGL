@@ -11,8 +11,8 @@ function Box() {
 
 function treeMesh(scene, x, z) {
     let loader = new THREE.TextureLoader();
-    const randomPositionX = x;
-    const randomPositionZ = z;
+    const positionX = x;
+    const positionZ = z;
     // make log from tree
     const bast = textureLoader.load("images/bast.jpg");
     const displacement = loader.load("displacement2.jpg")
@@ -28,8 +28,8 @@ function treeMesh(scene, x, z) {
 
     let logMesh = new THREE.Mesh(log, bastMaterial);
     logMesh.position.y = 2;
-    logMesh.position.x = randomPositionX;
-    logMesh.position.z = randomPositionZ;
+    logMesh.position.x = positionX;
+    logMesh.position.z = positionZ;
     logMesh.castShadow = true;
     logMesh.receiveShadow = true;
     scene.add(logMesh);
@@ -49,15 +49,25 @@ function treeMesh(scene, x, z) {
         displacementScale: 6
     });
 
+    //right sphere
     const sphereMeshOne = new THREE.Mesh(sphere, sphereMaterial);
-    const sphereMeshTwo = new THREE.Mesh(sphere, sphereMaterial);
-    const sphereMeshTree = new THREE.Mesh(sphere, sphereMaterial);
-    const sphereMeshFour = new THREE.Mesh(sphere, sphereMaterial);
-
     sphereMeshOne.position.y = 6.5;
+    sphereMeshOne.position.z = positionZ;
+    sphereMeshOne.position.x = positionX - 1.2;
+    //left sphere
+    const sphereMeshTwo = new THREE.Mesh(sphere, sphereMaterial);
     sphereMeshTwo.position.y = 6.5;
+    sphereMeshTwo.position.z = positionZ;
+    sphereMeshTwo.position.x = positionX - (-1.2);
+    //bottom sphere
+    const sphereMeshTree = new THREE.Mesh(sphere, sphereMaterial);
     sphereMeshTree.position.y = 5;
+    sphereMeshTree.position.z = positionZ;
+    sphereMeshTree.position.x = positionX;
+    //top sphere
+    const sphereMeshFour = new THREE.Mesh(sphere, sphereMaterial);
     sphereMeshFour.position.y = 8;
+<<<<<<< Updated upstream:Scripts/RandomTree.js
 
     sphereMeshOne.position.z = randomPositionZ;
     sphereMeshTwo.position.z = randomPositionZ;
@@ -68,6 +78,10 @@ function treeMesh(scene, x, z) {
     sphereMeshTwo.position.x = randomPositionX - (-1.2);
     sphereMeshTree.position.x = randomPositionX;
     sphereMeshFour.position.x = randomPositionX;
+=======
+    sphereMeshFour.position.z = positionZ;
+    sphereMeshFour.position.x = positionX;     
+>>>>>>> Stashed changes:RandomTree.js
 
     scene.add(sphereMeshOne, sphereMeshTwo, sphereMeshTree, sphereMeshFour);
 }

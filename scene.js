@@ -1,6 +1,5 @@
 // Create scene
 const scene = new THREE.Scene();
-
 cameraLock = [2, 2]
 
 // Create camera
@@ -40,7 +39,6 @@ camera.position.x = 2;  // Move right from center of scene
 camera.position.y = 3;  // Move up from center of scene
 camera.position.z = 20;  // Move camera away from center of scene
 // Import camera control and rotation library
-
 
 const render = function () {
     requestAnimationFrame(render);
